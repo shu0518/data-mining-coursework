@@ -7,7 +7,7 @@
 | 資料夾 | 主題 | 資料集 | 演算法 |
 |---|---|---|---|
 | [`01-decision-tree-classification`](01-decision-tree-classification) | 決策樹分類 | Adult 收入預測 | ID3、C4.5、CART、C5.0，比較四種切割準則 |
-| [`02-regression-prediction`](02-regression-prediction) | 迴歸預測 | Boston Housing 房價 | KNN、SVR、Random Forest、XGBoost，含 K-Fold 交叉驗證 |
+| [`02-regression-prediction`](02-regression-prediction) | 迴歸預測 | Adult（預測每週工時）、Boston Housing 房價 | KNN、SVR、Random Forest、XGBoost，含 K-Fold 交叉驗證 |
 | [`03-clustering-analysis`](03-clustering-analysis) | 分群分析 | Banana / Sizes3（2D 非凸資料） | K-Means、DBSCAN、Hierarchical Clustering |
 | [`04-association-rule-mining`](04-association-rule-mining) | 關聯規則探勘 | 模擬電商交易資料 | Apriori / FP-Growth 購物籃分析 |
 
