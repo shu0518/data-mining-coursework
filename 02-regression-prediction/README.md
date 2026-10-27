@@ -1,8 +1,6 @@
 # Data Mining Project 2: Regression Prediction
 
-本專案的目標是解決連續數值的預測問題，使用經典的 **Boston Housing Dataset** 來預測波士頓地區的房價。
-
-實作並比較四種不同類型的演算法（KNN, SVR, Random Forest, XGBoost），並透過交叉驗證（K-Fold）來評估模型的穩定性。
+本專案的目標是解決連續數值的預測問題。在 Adult 資料集上以 KNN、SVR、Random Forest、XGBoost 預測每週工時（hours_per_week），比較四種演算法的表現；並在 Boston Housing 資料集上以 XGBoost 搭配 5-Fold 交叉驗證預測房價，評估模型的穩定性與特徵篩選的效果。
 
 ## 📂 專案結構
 
