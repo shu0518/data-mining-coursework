@@ -36,17 +36,33 @@
 
 ## 🚀 實驗結果 (Results)
 
-透過比較 RMSE (均方根誤差)、MAPE (平均絕對百分比誤差) 與 R² Score，實驗結果顯示 **XGBoost** 與 **Random Forest** 在此資料集上表現最佳。
+透過比較 RMSE (均方根誤差)、MAPE (平均絕對百分比誤差) 與 R² Score 評估各模型表現。
+
+### 1. Adult 資料集：預測每週工時 (`hours_per_week`)
+
+在相同的訓練／測試切分下比較四種演算法，**XGBoost** 的整體表現最佳，且訓練時間遠低於 SVR 與 Random Forest。
 
 | Model | RMSE | MAPE (%) | R² Score | Note |
 |-------|------|----------|----------|------|
-| **XGBoost (K-Fold)** | *(Fill later)* | *(Fill later)* | *(Fill later)* | Best Stability |
-| **XGBoost** | *(Fill later)* | *(Fill later)* | *(Fill later)* | Best Accuracy |
-| **Random Forest** | *(Fill later)* | *(Fill later)* | *(Fill later)* | High Interpretability |
-| **SVR** | *(Fill later)* | *(Fill later)* | *(Fill later)* | |
-| **KNN** | *(Fill later)* | *(Fill later)* | *(Fill later)* | Baseline |
+| **XGBoost** | **10.86** | 30.68 | **0.243** | Best Accuracy, Fastest Training |
+| **SVR (RBF)** | 10.92 | **30.16** | 0.234 | |
+| **Random Forest** | 11.15 | 31.14 | 0.202 | Feature Importance Analysis |
+| **KNN** | 11.30 | 32.15 | 0.181 | Baseline |
 
-> 註：詳細數值請參考各 Notebook 的輸出結果。
+> 註：四個模型的 R² 皆低於 0.25，代表 Adult 資料集的人口統計特徵僅能解釋每週工時的一小部分變異。
+
+### 2. Boston Housing：XGBoost 5-Fold 交叉驗證（預測房價 `MEDV`）
+
+以 5-Fold 交叉驗證評估模型穩定性，並比較依特徵重要性篩選特徵的效果。以累積重要性 95.4% 篩選特徵時表現最佳。
+
+| Feature Setting | RMSE | MAPE (%) | R² Score | Note |
+|-----------------|------|----------|----------|------|
+| Baseline (13 Features) | 3.08 | 10.80 | 0.886 | |
+| Strategy 1: Top-5 Features | 3.38 | 12.01 | 0.861 | |
+| Strategy 2: Threshold (1%) | 3.00 | 10.84 | 0.892 | |
+| **Strategy 3: Cumulative Importance (95.4%)** | **2.97** | **10.77** | **0.894** | Best |
+
+> 註：表中數值為 5-Fold 的平均結果，詳細數值請參考各 Notebook 的輸出結果。
 
 ## 🛠️ 技術細節
 
